@@ -15,7 +15,7 @@ namespace CalculadoraDesktop
             string[] resultados = new string[100];
             int contador = 0;
 
-            while (!opcao.Equals("s", StringComparison.OrdinalIgnoreCase))
+            while (true)
             {
                 Console.WriteLine("Selecione a operação: {0}1 para soma {0}2 para subtrair {0}3 para multiplicar {0}4 para dividir {0}5 para mostar resultados {0}---S Para sair", Environment.NewLine);
                 opcao = Console.ReadLine();
@@ -51,8 +51,11 @@ namespace CalculadoraDesktop
                         Console.WriteLine(resultados[i]);
                     }
                 }
-                else
+                else if (opcao == "s"||opcao == "S")
                 {
+                    break;
+                }
+                else{
                     Console.WriteLine("Operação inválida");
                     Console.ReadLine();
                     Console.Clear();
